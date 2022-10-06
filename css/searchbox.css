@@ -1,10 +1,10 @@
 #result {
   position: absolute;
   display: block;
-  width: 22%;
+  width: 25%;
   height: 3%;
-  top: 8.5%;
-  right: 6.5%;
+  top: 6.8%;
+  right: 4.96675%;
   z-index: 2;
   cursor: pointer;
 }

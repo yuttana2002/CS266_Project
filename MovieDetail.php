@@ -162,8 +162,7 @@ $query3 = mysqli_query($conn, $sql3);
             </ul>
 <!--- replace old search box -->
             <form class="d-flex" action="search.php" method="POST">
-              <input class="form-control me-2" id="searchBox" name="searchBox" autocomplete="off" type="search" placeholder="ค้นหาภาพยตร์" aria-label="Search" required>
-			  
+              <input class="form-control me-2" id="searchBox" name="searchBox" style='width: 476px;' autocomplete="off" type="search" placeholder="ค้นหาภาพยตร์" aria-label="Search" required>
               <button class="btn btn-outline-light" type="submit">Search</button>
             </form>
 <!--- replace old search box -->
