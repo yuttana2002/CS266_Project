@@ -1,0 +1,12 @@
+body {
+  color: rgb(184,227,255);
+  border-color: rgb(184,227,255);
+  background: rgb(184,227,255);
+}
+
+.navbar-brand {
+  background: url("../../img/logo.png") center / contain no-repeat;
+  width: 100px;
+  height: 103px;
+}
+

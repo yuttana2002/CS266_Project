@@ -1,0 +1,9 @@
+.fit-cover {
+  object-fit: cover;
+}
+
+.navbar-nav {
+  font-size: 23px;
+  font-family: Kanit, sans-serif;
+}
+
