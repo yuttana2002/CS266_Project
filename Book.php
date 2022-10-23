@@ -181,16 +181,20 @@
                                     echo "<h4 style='font-family: Kanit, sans-serif; '>Show Time: " . $showtime . "  Complex: " . $TheatreName . "   </h4>";
                                 
             
-                                   ?> <br><br>
+                                   ?> <br>
                                    <h5 id="showprice" ></h5>
                                         <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Ticket </small>
                                         <br>    
                                         <input class="form-control" type="number" id="NumOfFlim" name = "NumOfFlim" value="1" min="1" max="<?php echo  $RemainingSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
                                        
-                                        <br><button type="button" class="btn btn-primary shadow" style="text-align: center;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;height: 30px;font-size: 12px;" onclick="add()">+</button>
-                                        <button type="button" class="btn btn-primary shadow" style="text-align: center;font-family: Kanit, sans-serif;height: 30px;font-size: 12px;" onclick="rem()">-</button>
                                         
-                                        <p class="lead fs-4"><br>  
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Popcorn </small>
+                                        <input class="form-control" type="number" id="NumOfPop" name = "NumOfPop" value="0" min="0" max="<?php echo  $RemainingSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Drink </small>
+                                        <input class="form-control" type="number" id="NumOfDrink" name = "NumOfDrink" value="0" min="0" max="<?php echo  $RemainingSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
+                                        <p class="lead fs-4">
+                                        <small style="color: red; font-size: 10px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*pick a flavor of Popcorn and Drink at the counter </small>
+                                        <br><br> 
                                         <button class="btn btn-primary shadow " style="margin-left: 10px;font-family: Kanit, sans-serif;width: 140px;" ;>ยืนยัน (Confirm)</button>
                               
                                       
