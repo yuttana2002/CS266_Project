@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 06, 2022 at 09:49 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.29
+-- Host: 127.0.0.1
+-- Generation Time: Oct 23, 2022 at 05:50 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -88,7 +88,7 @@ CREATE TABLE `film` (
 
 INSERT INTO `film` (`FilmID`, `FilmName`, `FilmDescription`, `FilmDuration`, `FilmRating`) VALUES
 (50, 'Spider-Man No Way Home', 'With Spider-Man\'s identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.', '02:28:00', 3),
-(51, 'Avengers Endgame', 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\' actions and restore balance to the universe.', '03:01:00', 4.4),
+(51, 'Avengers Endgamer', 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos\' actions and restore balance to the universe.', '03:01:00', 4.4),
 (52, 'The Medium', 'A horrifying story of a shaman\'s inheritance in the Isan region of Thailand. What could be possessing a family member might not be the Goddess they make it out to be.', '02:10:00', 3.4),
 (54, 'Doctor Strange', 'Dr. Stephen Strange casts a forbidden spell that opens the doorway to the multiverse, including alternate versions of himself, whose threat to humanity is too great for the combined forces of Strange, Wong, and Wanda Maximoff.', '02:06:00', 4.35),
 (55, 'Fantastic Beasts The Secrets of Dumbledore', 'Professor Albus Dumbledore knows the powerful Dark wizard Gellert Grindelwald is moving to seize control of the wizarding world. Unable to stop him alone, he entrusts Magizoologist Newt Scamander to lead an intrepid team of wizards, witches and one brave Muggle baker on a dangerous mission, where they encounter old and new beasts and clash with Grindelwald\'s growing legion of followers. But with the stakes so high, how long can Dumbledore remain on the sidelines?', '02:22:00', 3.4),
@@ -6462,24 +6462,27 @@ CREATE TABLE `ticket` (
   `mID` varchar(13) NOT NULL,
   `FilmID` int(3) NOT NULL,
   `TheatreID` int(2) NOT NULL,
-  `T_Showtime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `T_Showtime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `Food` int(11) NOT NULL,
+  `Drink` int(11) NOT NULL,
+  `Price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `ticket`
 --
 
-INSERT INTO `ticket` (`TicketID`, `mID`, `FilmID`, `TheatreID`, `T_Showtime`) VALUES
-(58, '1500000000001', 50, 1, '2022-05-10 11:10:00'),
-(59, '1500000000001', 50, 1, '2022-05-10 11:10:00'),
-(60, '1500000000001', 50, 1, '2022-05-10 11:10:00'),
-(61, '1233567890123', 54, 1, '2022-05-07 12:30:00'),
-(62, '1233567890123', 54, 1, '2022-05-07 12:30:00'),
-(63, '1233567890123', 54, 1, '2022-05-07 12:30:00'),
-(64, '1233567890123', 54, 1, '2022-05-07 12:30:00'),
-(65, '1133450108126', 51, 1, '2022-05-11 02:00:00'),
-(66, '1133450108126', 51, 1, '2022-05-11 02:00:00'),
-(67, '1133450108126', 51, 1, '2022-05-11 02:00:00');
+INSERT INTO `ticket` (`TicketID`, `mID`, `FilmID`, `TheatreID`, `T_Showtime`, `Food`, `Drink`, `Price`) VALUES
+(58, '1500000000001', 50, 1, '2022-05-10 11:10:00', 0, 0, 210),
+(59, '1500000000001', 50, 1, '2022-05-10 11:10:00', 0, 0, 210),
+(60, '1500000000001', 50, 1, '2022-05-10 11:10:00', 0, 0, 210),
+(61, '1233567890123', 54, 1, '2022-05-07 12:30:00', 0, 0, 210),
+(62, '1233567890123', 54, 1, '2022-05-07 12:30:00', 0, 0, 210),
+(63, '1233567890123', 54, 1, '2022-05-07 12:30:00', 0, 0, 210),
+(64, '1233567890123', 54, 1, '2022-05-07 12:30:00', 0, 0, 210),
+(65, '1133450108126', 51, 1, '2022-05-11 02:00:00', 0, 0, 240),
+(66, '1133450108126', 51, 1, '2022-05-11 02:00:00', 0, 0, 240),
+(67, '1133450108126', 51, 1, '2022-05-11 02:00:00', 0, 0, 240);
 
 -- --------------------------------------------------------
 
