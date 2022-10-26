@@ -2,7 +2,7 @@
   include('server.php');
     session_start();
  
-    if (!isset($_SESSION['Email'])) {
+    if (!isset($_SESSION['Eeqtl'])) {
        $_SESSION['error'] = "You must log in first";
        header('location: login.php');
    }
@@ -14,7 +14,7 @@
 
    if (isset($_GET['logout'])) {
        session_destroy();
-       unset($_SESSION['Email']);
+       unset($_SESSION['Eeqtl']);
        unset($_SESSION['ID']);
        header('location: login.php');
    }
@@ -26,7 +26,7 @@
   $TheatreID = $_GET['TheatreID'];
   $showtime = $_GET['showtime'];
   $Price = $_GET['Price'];
-  $RemainingSeat = $_GET['RemainingSeat'];
+  $ReeqtningSeat = $_GET['ReeqtningSeat'];
   $TheatreName = $_GET['TheatreName'];
   $ID = $_SESSION['ID'];
   
@@ -45,7 +45,7 @@
   $_SESSION['FilmID'] =  $FilmID;
   $_SESSION['TheatreID']= $TheatreID ;
   $_SESSION['ShowTime']= $showtime;
-  $_SESSION['RemainingSeat']= $RemainingSeat;
+  $_SESSION['ReeqtningSeat']= $ReeqtningSeat;
 
 
  
@@ -85,7 +85,7 @@
       
       var price = " <?php echo  $Price  ?> ";
   
-      var remaingseat = " <?php echo  $RemainingSeat  ?> ";
+      var reeqtngseat = " <?php echo  $ReeqtningSeat  ?> ";
 
 
       function showprice(){
@@ -181,16 +181,22 @@
                                     echo "<h4 style='font-family: Kanit, sans-serif; '>Show Time: " . $showtime . "  Complex: " . $TheatreName . "   </h4>";
                                 
             
-                                   ?> <br><br>
-					<h5 id="showprice" ></h5>
+                                   ?> <br>
+                                   <h5 id="showprice" ></h5>
                                         <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Ticket </small>
                                         <br>    
-                                        <input class="form-control" type="number" id="NumOfFlim" name = "NumOfFlim" value="1" min="1" max="<?php echo  $RemainingSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
+                                        <input class="form-control" type="number" id="NumOfFlim" name = "NumOfFlim" value="1" min="1" max="<?php echo  $ReeqtningSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
                                        
-                                        <br><button type="button" class="btn btn-primary shadow" style="text-align: center;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;height: 30px;font-size: 12px;" onclick="add()">+</button>
-                                        <button type="button" class="btn btn-primary shadow" style="text-align: center;font-family: Kanit, sans-serif;height: 30px;font-size: 12px;" onclick="rem()">-</button>
                                         
-                                        <p class="lead fs-4"><br>  
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Pop Corn</small>
+                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(200 gram)</small>
+                                        <input class="form-control" type="number" id="NumOfPop" name = "NumOfPop" value="0" min="0" max="<?php echo  $ReeqtningSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Drink</small>
+                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(32 oz)</small>
+                                        <input class="form-control" type="number" id="NumOfDrink" name = "NumOfDrink" value="0" min="0" max="<?php echo  $ReeqtningSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
+                                        <p class="lead fs-4">
+                                        <small style="color: red; font-size: 10px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*pick a flavor of Popcorn and Drink at the counter </small>
+                                        <br><br> 
                                         <button class="btn btn-primary shadow " style="margin-left: 10px;font-family: Kanit, sans-serif;width: 140px;" ;>ยืนยัน (Confirm)</button>
                               
                                       
@@ -215,22 +221,22 @@
     <script src="js/book_Lightbox-Gallery.js"></script>
     <script src="js/book_Simple-Slider.js"></script>
 
- <script>
+   <script>
       function rem(){
         let cnt = document.getElementById('NumOfFlim').value;
        let pop =  document.getElementById('NumOfPop').value;
 	    let drink =  document.getElementById('NumOfDrink').value;
 		let film = document.getElementById('NumOfFlim').value;
-	      let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
+	      let eqt = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
 	      
 	 if(cnt<=1 ){
           document.getElementById('NumOfFlim').value = 1;
- 	  document.getElementById('showprice').innerHTML='Price: ' + mai;
+ 	  document.getElementById('showprice').innerHTML='Price: ' + eqt;
         
         }else{
          cnt = Number(cnt)-1;
  	document.getElementById('NumOfFlim').value = Number(cnt);
-          document.getElementById('showprice').innerHTML='Price: ' + mai;     
+          document.getElementById('showprice').innerHTML='Price: ' + eqt;     
         }
         
     }
@@ -240,30 +246,30 @@
 	    let drink =  document.getElementById('NumOfDrink').value;
       let cnt = document.getElementById('NumOfFlim').value;
 	  let film = document.getElementById('NumOfFlim').value;
-let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
+let eqt = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
 
         
-      if(cnt >= <?php echo  $RemainingSeat  ?>){
+      if(cnt >= <?php echo  $ReeqtningSeat  ?>){
           
           if(cnt >= 20){
              document.getElementById('NumOfFlim').value = 20;
-             document.getElementById('showprice').innerHTML='Price: ' + mai;
+             document.getElementById('showprice').innerHTML='Price: ' + eqt;
           }
           else{
-             document.getElementById('NumOfFlim').value = <?php echo  $RemainingSeat  ?>;
-             document.getElementById('showprice').innerHTML='Price: ' + price*<?php echo  $RemainingSeat  ?> ;
+             document.getElementById('NumOfFlim').value = <?php echo  $ReeqtningSeat  ?>;
+             document.getElementById('showprice').innerHTML='Price: ' + price*<?php echo  $ReeqtningSeat  ?> ;
           } 
 	} 
  
       else{
  	if(cnt >= 20){
              document.getElementById('NumOfFlim').value = 20;
-             document.getElementById('showprice').innerHTML='Price: ' + mai  ;
+             document.getElementById('showprice').innerHTML='Price: ' + eqt  ;
 
           }
  		else{cnt = Number(cnt)+1;
           	document.getElementById('NumOfFlim').value = Number(cnt);
-         	 document.getElementById('showprice').innerHTML='Price: ' + mai ;}
+         	 document.getElementById('showprice').innerHTML='Price: ' + eqt ;}
 	
         }
       
@@ -275,18 +281,16 @@ let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*N
 	    let drink =  document.getElementById('NumOfDrink').value;
         let cnt1 = document.getElementById('NumOfFlim').value;
 		let film = document.getElementById('NumOfFlim').value;
-	      let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
+	      let eqt = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
   	if(cnt1 >= 20){
              document.getElementById('NumOfFlim').value = 20;
-            document.getElementById('showprice').innerHTML='Price: ' + mai ;
+            document.getElementById('showprice').innerHTML='Price: ' + eqt ;
           }
-	else{ document.getElementById('showprice').innerHTML='Price: ' + mai;}
+	else{ document.getElementById('showprice').innerHTML='Price: ' + eqt;}
        
       }
 
     </script>
-
-
 </body>
 
 </html>

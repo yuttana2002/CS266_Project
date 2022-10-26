@@ -140,6 +140,10 @@
          $query="SELECT TheatreName FROM theatre WHERE TheatreID='$ticket[TheatreID]'";
          $theatre= mysqli_query($conn,$query);
          $theatre=mysqli_fetch_assoc($theatre);
+	    
+	 $query="SELECT * FROM `ticket` WHERE mID ='$_SESSION[ID]' AND FilmID='$ticket[FilmID]' AND TheatreID='$ticket[TheatreID]' AND T_Showtime='$ticket[T_Showtime]'";
+	 $food= mysqli_query($conn,$query);
+      $food=mysqli_fetch_assoc($food);
          
       
       ?> 
@@ -166,7 +170,7 @@
                                         <?php endwhile?><br>
                                         <p class="lead fs-6"><br><br></p>
                                         <p class="fw-bold float-start mb-0" id="RatingLabel" style="width: 97px;color: rgb(20,0,255);font-family: Kanit, sans-serif;margin-top: -26px;">Movie Rating</p>
-                                        <p class="text-muted float-start mb-0" id="RatingScore" style="margin-top: -26px;margin-left: 93px;">&nbsp; <?php echo($curfilm['FilmRating']." (".$countreview['count']." reviews)")?> </p><br><br><br>
+                                        <p class="text-muted float-start mb-0" id="RatingScore" style="margin-top: -26px;margin-left: 93px;">&nbsp; <?php echo($curfilm['FilmRating']." (".$countreview['count']." reviews)")?> </p><br><br>
                                         <button class="btn btn-primary shadow float-start" id="FilmTime" style="margin-right: 10px;font-family: Kanit, sans-serif;width: 150px;">
                                         <?php 
                                         
@@ -185,7 +189,13 @@
                                         ?></button>
                                         <p class="lead fs-6"><br><br><br></p>
                                         <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -210px;">Number of Ticket :</small>
-                                        <small id="FilmOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($amount['count']);?><br><br></small>
+                                        <small id="FilmOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($amount['count']);?><br></small>
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -132px;">Number of Pop Corn</small>
+                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;">(200 oz) :</small>
+                                        <small id="FoodOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($food['Food']);?><br></small>
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -181px;">Number of Drink</small>
+                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;">(32 oz):</small>
+                                        <small id="DrinkOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($food['Drink']);?><br></small>
                                         <button class="btn btn-outline-primary float-start" data-bss-hover-animate="pulse" id="ReviewButton" type="button" style="margin-left: 0px;font-family: Kanit, sans-serif;margin-top:40px;" onclick="window.location.href='MoviesReview.php?movies=<?php echo($curfilm['FilmName'])?>&moviesID=<?php echo($ticket['FilmID']);?>';">Review Page</button>
                                    
                                 </div>
