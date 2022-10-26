@@ -140,6 +140,10 @@
          $query="SELECT TheatreName FROM theatre WHERE TheatreID='$ticket[TheatreID]'";
          $theatre= mysqli_query($conn,$query);
          $theatre=mysqli_fetch_assoc($theatre);
+	    
+	 $query="SELECT * FROM `ticket` WHERE mID ='$_SESSION[ID]' AND FilmID='$ticket[FilmID]' AND TheatreID='$ticket[TheatreID]' AND T_Showtime='$ticket[T_Showtime]'";
+	 $food= mysqli_query($conn,$query);
+      $food=mysqli_fetch_assoc($food);
          
       
       ?> 
@@ -187,9 +191,9 @@
                                         <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -210px;">Number of Ticket :</small>
                                         <small id="FilmOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($amount['count']);?><br></small>
                                         <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -210px;">Number of Popcorn :</small>
-                                        <small id="FoodOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($amount['count']);?><br></small>
+                                        <small id="FoodOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($food['Food']);?><br></small>
                                         <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -210px;">Number of Drink :</small>
-                                        <small id="DrinkOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($amount['count']);?><br></small>
+                                        <small id="DrinkOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($food['Drink']);?><br></small>
                                         <button class="btn btn-outline-primary float-start" data-bss-hover-animate="pulse" id="ReviewButton" type="button" style="margin-left: 0px;font-family: Kanit, sans-serif;margin-top:40px;" onclick="window.location.href='MoviesReview.php?movies=<?php echo($curfilm['FilmName'])?>&moviesID=<?php echo($ticket['FilmID']);?>';">Review Page</button>
                                    
                                 </div>
