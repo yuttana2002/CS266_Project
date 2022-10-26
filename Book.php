@@ -182,7 +182,7 @@
                                 
             
                                    ?> <br><br>
-                                   <h5 id="showprice" ></h5>
+					<h5 id="showprice" ></h5>
                                         <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Ticket </small>
                                         <br>    
                                         <input class="form-control" type="number" id="NumOfFlim" name = "NumOfFlim" value="1" min="1" max="<?php echo  $RemainingSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
@@ -215,32 +215,39 @@
     <script src="js/book_Lightbox-Gallery.js"></script>
     <script src="js/book_Simple-Slider.js"></script>
 
-   <script>
+ <script>
       function rem(){
         let cnt = document.getElementById('NumOfFlim').value;
-       
+       let pop =  document.getElementById('NumOfPop').value;
+	    let drink =  document.getElementById('NumOfDrink').value;
+		let film = document.getElementById('NumOfFlim').value;
+	      let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
+	      
 	 if(cnt<=1 ){
           document.getElementById('NumOfFlim').value = 1;
- 	  document.getElementById('showprice').innerHTML='Price: ' + price ;
+ 	  document.getElementById('showprice').innerHTML='Price: ' + mai;
         
         }else{
          cnt = Number(cnt)-1;
  	document.getElementById('NumOfFlim').value = Number(cnt);
-          document.getElementById('showprice').innerHTML='Price: ' + price*Number(cnt) ;     
+          document.getElementById('showprice').innerHTML='Price: ' + mai;     
         }
         
     }
 
     function add(){
+		let pop =  document.getElementById('NumOfPop').value;
+	    let drink =  document.getElementById('NumOfDrink').value;
       let cnt = document.getElementById('NumOfFlim').value;
+	  let film = document.getElementById('NumOfFlim').value;
+let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
 
         
       if(cnt >= <?php echo  $RemainingSeat  ?>){
           
           if(cnt >= 20){
              document.getElementById('NumOfFlim').value = 20;
-             document.getElementById('showprice').innerHTML='Price: ' + price*Number(20) ;
-
+             document.getElementById('showprice').innerHTML='Price: ' + mai;
           }
           else{
              document.getElementById('NumOfFlim').value = <?php echo  $RemainingSeat  ?>;
@@ -251,12 +258,12 @@
       else{
  	if(cnt >= 20){
              document.getElementById('NumOfFlim').value = 20;
-             document.getElementById('showprice').innerHTML='Price: ' + price*Number(20) ;
+             document.getElementById('showprice').innerHTML='Price: ' + mai  ;
 
           }
  		else{cnt = Number(cnt)+1;
           	document.getElementById('NumOfFlim').value = Number(cnt);
-         	 document.getElementById('showprice').innerHTML='Price: ' + price*Number(cnt) ;}
+         	 document.getElementById('showprice').innerHTML='Price: ' + mai ;}
 	
         }
       
@@ -264,17 +271,21 @@
 
 
       function recal(){
+		  let pop =  document.getElementById('NumOfPop').value;
+	    let drink =  document.getElementById('NumOfDrink').value;
         let cnt1 = document.getElementById('NumOfFlim').value;
+		let film = document.getElementById('NumOfFlim').value;
+	      let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
   	if(cnt1 >= 20){
              document.getElementById('NumOfFlim').value = 20;
-            document.getElementById('showprice').innerHTML='Price: ' + price*Number(20) ;
-
+            document.getElementById('showprice').innerHTML='Price: ' + mai ;
           }
-	else{ document.getElementById('showprice').innerHTML='Price: ' + price*Number(cnt1);}
+	else{ document.getElementById('showprice').innerHTML='Price: ' + mai;}
        
       }
 
     </script>
+
 
 </body>
 
