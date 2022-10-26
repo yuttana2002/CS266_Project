@@ -2,6 +2,9 @@
     session_start();
     include('server.php');
     $NumofFlim = mysqli_real_escape_string($conn, $_POST['NumOfFlim']);
+    $NumofPop = mysqli_real_escape_string($conn, $_POST['NumOfPop']);
+    $NumofDrink = mysqli_real_escape_string($conn, $_POST['NumOfDrink']);
+    $showprice = mysqli_real_escape_string($conn, $_POST['showprice']);
     echo  $NumofFlim;
     $errors = array();
     $FilmID = $_SESSION['FilmID'];
@@ -15,10 +18,9 @@ $sql2 =  " UPDATE Showtime SET RemainingSeat = RemainingSeat- $NumofFlim  WHERE 
         mysqli_multi_query($conn,$sql2);    
 
     While ($NumofFlim > 0){
-            $sql =  "INSERT INTO Ticket (mID,FilmID,TheatreID,T_Showtime) VALUES ('$mID','$FilmID','$TheatreID', '$Showtime');" ;
+            $sql =  "INSERT INTO Ticket (mID,FilmID,TheatreID,T_Showtime,Food,Drink) VALUES ('$mID','$FilmID','$TheatreID', '$Showtime', '$NumofPop', '$NumofDrink');" ;
             mysqli_multi_query($conn,$sql);   
             $NumofFlim--;
-
 }
 
     unset($_SESSION['FilmID']);
