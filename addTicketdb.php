@@ -18,7 +18,7 @@ $sql2 =  " UPDATE Showtime SET RemainingSeat = RemainingSeat- $NumofFlim  WHERE 
         mysqli_multi_query($conn,$sql2);    
 
     While ($NumofFlim > 0){
-            $sql =  "INSERT INTO Ticket (mID,FilmID,TheatreID,T_Showtime,Food,Drink,Price) VALUES ('$mID','$FilmID','$TheatreID', '$Showtime', '$NumofPop', '$NumofDrink', '$showprice');" ;
+            $sql =  "INSERT INTO Ticket (mID,FilmID,TheatreID,T_Showtime,Food,Drink) VALUES ('$mID','$FilmID','$TheatreID', '$Showtime', '$NumofPop', '$NumofDrink');" ;
             mysqli_multi_query($conn,$sql);   
             $NumofFlim--;
 }
