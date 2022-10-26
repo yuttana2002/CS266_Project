@@ -222,29 +222,36 @@
    <script>
       function rem(){
         let cnt = document.getElementById('NumOfFlim').value;
-       
+       let pop =  document.getElementById('NumOfPop').value;
+	    let drink =  document.getElementById('NumOfDrink').value;
+		let film = document.getElementById('NumOfFlim').value;
+	      let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
+	      
 	 if(cnt<=1 ){
           document.getElementById('NumOfFlim').value = 1;
- 	  document.getElementById('showprice').innerHTML='Price: ' + price ;
+ 	  document.getElementById('showprice').innerHTML='Price: ' + mai;
         
         }else{
          cnt = Number(cnt)-1;
  	document.getElementById('NumOfFlim').value = Number(cnt);
-          document.getElementById('showprice').innerHTML='Price: ' + price*Number(cnt) ;     
+          document.getElementById('showprice').innerHTML='Price: ' + mai;     
         }
         
     }
 
     function add(){
+		let pop =  document.getElementById('NumOfPop').value;
+	    let drink =  document.getElementById('NumOfDrink').value;
       let cnt = document.getElementById('NumOfFlim').value;
+	  let film = document.getElementById('NumOfFlim').value;
+let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
 
         
       if(cnt >= <?php echo  $RemainingSeat  ?>){
           
           if(cnt >= 20){
              document.getElementById('NumOfFlim').value = 20;
-             document.getElementById('showprice').innerHTML='Price: ' + price*Number(20) ;
-
+             document.getElementById('showprice').innerHTML='Price: ' + mai;
           }
           else{
              document.getElementById('NumOfFlim').value = <?php echo  $RemainingSeat  ?>;
@@ -255,12 +262,12 @@
       else{
  	if(cnt >= 20){
              document.getElementById('NumOfFlim').value = 20;
-             document.getElementById('showprice').innerHTML='Price: ' + price*Number(20) ;
+             document.getElementById('showprice').innerHTML='Price: ' + mai  ;
 
           }
  		else{cnt = Number(cnt)+1;
           	document.getElementById('NumOfFlim').value = Number(cnt);
-         	 document.getElementById('showprice').innerHTML='Price: ' + price*Number(cnt) ;}
+         	 document.getElementById('showprice').innerHTML='Price: ' + mai ;}
 	
         }
       
@@ -268,18 +275,20 @@
 
 
       function recal(){
+		  let pop =  document.getElementById('NumOfPop').value;
+	    let drink =  document.getElementById('NumOfDrink').value;
         let cnt1 = document.getElementById('NumOfFlim').value;
+		let film = document.getElementById('NumOfFlim').value;
+	      let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
   	if(cnt1 >= 20){
              document.getElementById('NumOfFlim').value = 20;
-            document.getElementById('showprice').innerHTML='Price: ' + price*Number(20) ;
-
+            document.getElementById('showprice').innerHTML='Price: ' + mai ;
           }
-	else{ document.getElementById('showprice').innerHTML='Price: ' + price*Number(cnt1);}
+	else{ document.getElementById('showprice').innerHTML='Price: ' + mai;}
        
       }
 
     </script>
-
 </body>
 
 </html>
