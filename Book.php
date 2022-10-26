@@ -188,9 +188,11 @@
                                         <input class="form-control" type="number" id="NumOfFlim" name = "NumOfFlim" value="1" min="1" max="<?php echo  $RemainingSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
                                        
                                         
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Popcorn </small>
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Popcorn</small>
+                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(200 gram)</small>
                                         <input class="form-control" type="number" id="NumOfPop" name = "NumOfPop" value="0" min="0" max="<?php echo  $RemainingSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Drink </small>
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Drink</small>
+                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(32 oz)</small>
                                         <input class="form-control" type="number" id="NumOfDrink" name = "NumOfDrink" value="0" min="0" max="<?php echo  $RemainingSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
                                         <p class="lead fs-4">
                                         <small style="color: red; font-size: 10px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*pick a flavor of Popcorn and Drink at the counter </small>
@@ -222,29 +224,36 @@
    <script>
       function rem(){
         let cnt = document.getElementById('NumOfFlim').value;
-       
+       let pop =  document.getElementById('NumOfPop').value;
+	    let drink =  document.getElementById('NumOfDrink').value;
+		let film = document.getElementById('NumOfFlim').value;
+	      let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
+	      
 	 if(cnt<=1 ){
           document.getElementById('NumOfFlim').value = 1;
- 	  document.getElementById('showprice').innerHTML='Price: ' + price ;
+ 	  document.getElementById('showprice').innerHTML='Price: ' + mai;
         
         }else{
          cnt = Number(cnt)-1;
  	document.getElementById('NumOfFlim').value = Number(cnt);
-          document.getElementById('showprice').innerHTML='Price: ' + price*Number(cnt) ;     
+          document.getElementById('showprice').innerHTML='Price: ' + mai;     
         }
         
     }
 
     function add(){
+		let pop =  document.getElementById('NumOfPop').value;
+	    let drink =  document.getElementById('NumOfDrink').value;
       let cnt = document.getElementById('NumOfFlim').value;
+	  let film = document.getElementById('NumOfFlim').value;
+let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
 
         
       if(cnt >= <?php echo  $RemainingSeat  ?>){
           
           if(cnt >= 20){
              document.getElementById('NumOfFlim').value = 20;
-             document.getElementById('showprice').innerHTML='Price: ' + price*Number(20) ;
-
+             document.getElementById('showprice').innerHTML='Price: ' + mai;
           }
           else{
              document.getElementById('NumOfFlim').value = <?php echo  $RemainingSeat  ?>;
@@ -255,12 +264,12 @@
       else{
  	if(cnt >= 20){
              document.getElementById('NumOfFlim').value = 20;
-             document.getElementById('showprice').innerHTML='Price: ' + price*Number(20) ;
+             document.getElementById('showprice').innerHTML='Price: ' + mai  ;
 
           }
  		else{cnt = Number(cnt)+1;
           	document.getElementById('NumOfFlim').value = Number(cnt);
-         	 document.getElementById('showprice').innerHTML='Price: ' + price*Number(cnt) ;}
+         	 document.getElementById('showprice').innerHTML='Price: ' + mai ;}
 	
         }
       
@@ -268,18 +277,20 @@
 
 
       function recal(){
+		  let pop =  document.getElementById('NumOfPop').value;
+	    let drink =  document.getElementById('NumOfDrink').value;
         let cnt1 = document.getElementById('NumOfFlim').value;
+		let film = document.getElementById('NumOfFlim').value;
+	      let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
   	if(cnt1 >= 20){
              document.getElementById('NumOfFlim').value = 20;
-            document.getElementById('showprice').innerHTML='Price: ' + price*Number(20) ;
-
+            document.getElementById('showprice').innerHTML='Price: ' + mai ;
           }
-	else{ document.getElementById('showprice').innerHTML='Price: ' + price*Number(cnt1);}
+	else{ document.getElementById('showprice').innerHTML='Price: ' + mai;}
        
       }
 
     </script>
-
 </body>
 
 </html>
