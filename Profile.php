@@ -81,7 +81,7 @@
                   <li><a class="dropdown-item" href="Profile.php">ข้อมูลผู้ใช้</a></li>
                   <li><a class="dropdown-item" href="Edit.php">แก้ไขข้อมูลส่วนตัว</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="Profile.php?logout='1'">Logout</a></li>
+                  <li><a class="dropdown-item" href="Profile.php?logout='1'">ออกจากระบบ</a></li>
                 </ul>
               </li>
             </ul>
@@ -101,38 +101,38 @@
                 <div class="user-grid" style="height: 535px;width: 740px;background: #ffffff;border-radius: 10px;border: 5px ">
                   <div class="profile-header" style="height: 40px;margin: 20px;"></div>  
                   <div class="profile-header" style="height: 40px;margin: 20px;">
-                        <h3>User Information</h3><button class="btn btn-primary edit-profile-button" type="button" style="margin-top: -70px;margin-left: 555px;width: 140.3906px;" onclick="window.location.href='Edit.php'"><i class="fas fa-user-edit" style="margin-right: 5px;"></i>Edit profile</button>
+                        <h3>ข้อมูลผู้ใช้</h3><button class="btn btn-primary edit-profile-button" type="button" style="margin-top: -70px;margin-left: 555px;width: 140.3906px;" onclick="window.location.href='Edit.php'"><i class="fas fa-user-edit" style="margin-right: 5px;"></i>แก้ไขข้อมูลผู้ใช้</button>
                         <hr style="height: 3px;margin-top: -30px;width: 210px;background: #495057;">
                     </div>
                     <div style="height: 340px;margin: 20px;">
                         <div style="height: 30px;">
-                            <h5 style="width: 330px;"><i class="far fa-list-alt" style="margin-right: 5px;"></i>Email</h5>
+                            <h5 style="width: 330px;"><i class="far fa-list-alt" style="margin-right: 5px;"></i>อีเมลล์</h5>
                             <p style="color: #495057;margin-bottom: 0px;width: 358px;margin-left: 340px;margin-top: -35px;font-size: 18px;"><?php echo($data['Email']);?></p>
                             <hr style="margin-top: 5px;background: #495057;height: 2px;">
                         </div>
                         <div style="height: 30px;margin-top: 15px;">
-                            <h5 style="width: 330px;"><i class="far fa-id-card" style="margin-right: 5px;"></i>Identification Card Number<br></h5>
+                            <h5 style="width: 330px;"><i class="far fa-id-card" style="margin-right: 5px;"></i>รหัสบัตรประชาชน<br></h5>
                             <p style="color: #495057;margin-bottom: 0px;width: 358px;margin-left: 340px;margin-top: -35px;font-size: 18px;"><?php echo($data['ID'])?><br></p>
                             <hr style="margin-top: 5px;background: #495057;height: 2px;">
                         </div>
                         <div style="height: 30px;margin-top: 15px;">
-                            <h5 style="width: 330px;"><i class="fas fa-user" style="margin-right: 5px;"></i>Full Name</h5>
+                            <h5 style="width: 330px;"><i class="fas fa-user" style="margin-right: 5px;"></i>ชื่อ นามสกุล</h5>
                             <p style="color: #495057;margin-bottom: 0px;width: 358px;margin-left: 340px;margin-top: -35px;font-size: 18px;"><?php echo($data['FirstName'])?>&nbsp;<?php echo($data['LastName'])?><br></p>
                             <hr style="margin-top: 5px;background: #495057;height: 2px;">
                         </div>
                         <div style="height: 30px;margin-top: 15px;">
-                            <h5 style="width: 330px;"><i class="fas fa-transgender-alt" style="margin-right: 5px;"></i>Gender</h5>
+                            <h5 style="width: 330px;"><i class="fas fa-transgender-alt" style="margin-right: 5px;"></i>เพศ</h5>
                             <p style="color: #495057;margin-bottom: 0px;width: 358px;margin-left: 340px;margin-top: -35px;font-size: 18px;">
                             <?php
-                      if ($data['Gender']=='M') echo("Men");
-                      else if ($data['Gender']=='F') echo("Women");
+                      if ($data['Gender']=='M') echo("ชาย");
+                      else if ($data['Gender']=='F') echo("หญิง");
                       else if ($data['Gender']=='L') echo("LGBTQ");
                       else if ($data['Gender']=='N') echo("ไม่ระบุ");
                             ?></p>
                             <hr style="margin-top: 5px;background: #495057;height: 2px;">
                         </div>
                         <div style="height: 30px;margin-top: 15px;">
-                            <h5 style="width: 330px;"><i class="far fa-address-book" style="margin-right: 5px;"></i>Address</h5>
+                            <h5 style="width: 330px;"><i class="far fa-address-book" style="margin-right: 5px;"></i>ที่อยู่</h5>
                             <p style="color: #495057;margin-bottom: 0px;width: 358px;margin-left: 340px;margin-top: -35px;font-size: 18px;height: 55px;">
                             <?php 
                                   if($data['HouseNo']!="")echo("เลขที่".$data['HouseNo']." ");
@@ -145,12 +145,12 @@
                             <br></p>
                             <br><hr style="margin-top: 5px;background: #495057;height: 2px;">
                             <div style="height: 30px;margin-top: 15px;">
-                                <h5 style="width: 330px;"><i class="fas fa-phone-alt" style="margin-right: 5px;"></i>Phone No.</h5>
+                                <h5 style="width: 330px;"><i class="fas fa-phone-alt" style="margin-right: 5px;"></i>เบอร์โทรศัพท์</h5>
                                 <p style="color: #495057;margin-bottom: 0px;width: 358px;margin-left: 340px;margin-top: -35px;font-size: 18px;"><?php echo($numphone['Tel'])?></p>
                                 <hr style="margin-top: 5px;background: #495057;height: 2px;">
                             </div>
                             <div style="height: 30px;margin-top: 15px;">
-                                <h5 style="width: 330px;"><i class="fas fa-business-time" style="margin-right: 5px;"></i>Member Type<br></h5>
+                                <h5 style="width: 330px;"><i class="fas fa-business-time" style="margin-right: 5px;"></i>ประเภทสมาชิก<br></h5>
                                 <p style="color: #495057;margin-bottom: 0px;width: 358px;margin-left: 340px;margin-top: -35px;font-size: 18px;">
                                 <?php
                                   if ($work['MemberType']=='K')echo("เด็กเล็ก");
