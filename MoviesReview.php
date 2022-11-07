@@ -149,7 +149,7 @@ $quereview = mysqli_query($conn, $review);
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  ตั๋วหนัง
+                  ตั๋วภาพยนตร์
                 </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <li><a class="dropdown-item" href="SearchMovie.php">จองตั๋ว</a></li>
@@ -163,13 +163,13 @@ $quereview = mysqli_query($conn, $review);
                   <li><a class="dropdown-item" href="Profile.php">ข้อมูลผู้ใช้</a></li>
                   <li><a class="dropdown-item" href="Edit.php">แก้ไขข้อมูลส่วนตัว</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="MoviesReview.php?logout='1'">Logout</a></li>
+                  <li><a class="dropdown-item" href="MoviesReview.php?logout='1'">ออกจากระบบ</a></li>
                 </ul>
               </li>
             </ul>
             <form class="d-flex" action="search.php" method="POST">
 			  <input class="form-control me-2" id="searchBox" name="searchBox" style='width: 476px;' autocomplete="off" type="search" placeholder="ค้นหาภาพยตร์" aria-label="Search" required>
-              <button class="btn btn-outline-light" type="submit">Search</button>
+              <button class="btn btn-outline-light" type="submit">คันหา</button>
             </form>
           </div>
         </div>
@@ -215,7 +215,7 @@ $quereview = mysqli_query($conn, $review);
 									while ($row = mysqli_fetch_array($query2)) 
 			{	  
 										echo "<div><p class='lead fs-6' id='FilmDetail' style='color: rgb(30,31,31);font-family: Kanit, sans-serif;text-align: justify;'>".$row['FilmDescription']."<br><br></p><br>";
-										echo "<p class='fw-bold float-start mb-0' id='RatingLabel' style='width: 97px;color: rgb(20,0,255);font-family: Kanit, sans-serif;margin-top:-50px;'>Duration</p>";
+										echo "<p class='fw-bold float-start mb-0' id='RatingLabel' style='width: 97px;color: rgb(20,0,255);font-family: Kanit, sans-serif;margin-top:-50px;'>ระยะเวลา</p>";
 										echo "<p class='text-muted float-start mb-0' id='RatingScore' style='margin-top:-50px;margin-left: 80px;'>".$row['FilmDuration']."</p>";
             }                           ?>		
 			
@@ -333,8 +333,8 @@ if($filmData['FilmRating'] == 5 ){
 ?> 
 													<br>
 												</div>
-										<center><button class='btn btn-primary shadow float-start' style='margin-top: -10px; font-family: Kanit, sans-serif;width: 140px;' onclick='gotoBook()'>ซื้อตั๋วหนัง (Ticket)</button></center>
-									<center><button class='btn btn-primary shadow float-start' id='add_review' name='add_review' style='margin-top: -10px; margin-left: 10px; font-family: Kanit, sans-serif;width: 140px;'>รีวิวหนัง<div>( Review)</div></button></center>
+										<center><button class='btn btn-primary shadow float-start' style='margin-top: -10px; font-family: Kanit, sans-serif;width: 140px;' onclick='gotoBook()'>ซื้อตั๋วภาพยนตร์</button></center>
+									<center><button class='btn btn-primary shadow float-start' id='add_review' name='add_review' style='margin-top: -10px; margin-left: 10px; font-family: Kanit, sans-serif;width: 140px;'>รีวิวภาพยนตร์</button></center>
 									
 									
 									
@@ -364,7 +364,7 @@ if($filmData['FilmRating'] == 5 ){
               <div class="card">
                   <div class="card-body p-4" style="font-family: Kanit, sans-serif;box-shadow: inset 0px 0px #070707;">
                       <p class="text-primary card-text mb-0" id="ReviewUserName1" style="box-shadow: inset 0px 0px #070707;"><?=$Review['FirstName']?> <?=$Review['LastName']?></p>
-                      <p class="fw-bold float-start mb-0" style="width: 50px;color: rgb(31,31,31);box-shadow: inset 0px 0px #070707;">Rating</p>
+                      <p class="fw-bold float-start mb-0" style="width: 50px;color: rgb(31,31,31);box-shadow: inset 0px 0px #070707;">เรตติ้ง</p>
                       <p class="text-muted float-start card-text mb-0" style="box-shadow: inset 0px 0px #070707;">&nbsp; <?=$Review['rating']?></p><textarea class="form-control" id="ReviewTextDis1" readonly="" style="width: 354px;height: 154px;font-family: Kanit, sans-serif;box-shadow: inset 0px 0px #070707;" placeholder="<?=$Review['comment']?>"></textarea>
                       <div class="d-flex" style="box-shadow: inset 0px 0px #070707;">
                           <div style="box-shadow: inset 0px 0px #070707;"></div>
@@ -403,7 +403,7 @@ if($filmData['FilmRating'] == 5 ){
   	<div class="modal-dialog" role="document">
     	<div class="modal-content">
 	      	<div class="modal-header">
-	        	<h5 class="modal-title">Submit Review</h5>
+	        	<h5 class="modal-title">ยืนยันรีวิว</h5>
 				
 	        	<button type="button" id='close' class="btn-close" data-dismiss="modal" aria-label="Close">
 	          		
@@ -412,10 +412,10 @@ if($filmData['FilmRating'] == 5 ){
 	      	<div class="modal-body">
 	      		<form class="review_form" action="MovieReview_db.php" method="post">
 									
-									<input class="form-control-plaintext" type="text" id="ReviewLabel" value="Write  a Review" readonly="" style="font-family: Kanit, sans-serif;"><label class="form-label" id="ReviewScore" style="margin: 0px;margin-right: 5px;color: rgb(19,27,33);">ให้คะแนน Review :</label>
+									<input class="form-control-plaintext" type="text" id="ReviewLabel" value="Write  a Review" readonly="" style="font-family: Kanit, sans-serif;"><label class="form-label" id="ReviewScore" style="margin: 0px;margin-right: 5px;color: rgb(19,27,33);">ให้คะแนน รีวิว :</label>
 									<input type="number" id="ratingNum" name="ratingNum" style="width: 45px;margin-right: 5px;" max="5" min="1" step="1" required><br><br>
 									<textarea data-bs-toggle="tooltip" class="form-control" id="Comments" name="Comments" data-bss-tooltip="" id="ReviewTextInput" style="font-family: Kanit, sans-serif;margin: 2px;margin-left: 0;height: 100px;width: 430px;" placeholder="write review here" required></textarea>
-									<br> <button class="btn btn-outline-primary float-start" data-bss-hover-animate="pulse" id="ReviewButton" name="review_user" type="submit" data-toggle="submit" style="margin-left: 0px;font-family: Kanit, sans-serif;">Submit Review</button> 
+									<br> <button class="btn btn-outline-primary float-start" data-bss-hover-animate="pulse" id="ReviewButton" name="review_user" type="submit" data-toggle="submit" style="margin-left: 0px;font-family: Kanit, sans-serif;">ยืนยันรีวิว</button> 
 									<?php
 									echo "<input type='text' id='filmID' name='filmID' value='".$FilmID."' hidden>";
 									?>

@@ -42,9 +42,9 @@
         <?php endif ?>
 
                             <div class="mb-3"><input class="form-control" type="text" name="Email" placeholder="example@cinema.com" required></div>
-                            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" required></div>
-                            <div class="mb-3"><button class="btn btn-primary d-block w-100" data-bss-hover-animate="pulse" type="submit" name="login_user">Log in</button required></div>
-                            <p>Not yet a member? <a href="register.php">Sign Up</a></p> 
+                            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="รหัสผ่าน" required></div>
+                            <div class="mb-3"><button class="btn btn-primary d-block w-100" data-bss-hover-animate="pulse" type="submit" name="login_user">เข้าสู่ระบบ</button required></div>
+                            <p>หากยังไม่มีบัญชี? <a href="register.php">สมัครสมาชิก</a></p> 
                     </div>
                 </div>
             </section>

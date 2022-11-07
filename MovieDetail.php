@@ -142,7 +142,7 @@ $query3 = mysqli_query($conn, $sql3);
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  ตั๋วหนัง
+                  ตั๋วภาพยนตร์
                 </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <li><a class="dropdown-item" href="SearchMovie.php">จองตั๋ว</a></li>
@@ -156,14 +156,14 @@ $query3 = mysqli_query($conn, $sql3);
                   <li><a class="dropdown-item" href="Profile.php">ข้อมูลผู้ใช้</a></li>
                   <li><a class="dropdown-item" href="Edit.php">แก้ไขข้อมูลส่วนตัว</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="MovieDetail.php?logout='1'">Logout</a></li>
+                  <li><a class="dropdown-item" href="MovieDetail.php?logout='1'">ออกจากระบบ</a></li>
                 </ul>
               </li>
             </ul>
 <!--- replace old search box -->
             <form class="d-flex" action="search.php" method="POST">
               <input class="form-control me-2" id="searchBox" name="searchBox" style='width: 476px;' autocomplete="off" type="search" placeholder="ค้นหาภาพยตร์" aria-label="Search" required>
-              <button class="btn btn-outline-light" type="submit">Search</button>
+              <button class="btn btn-outline-light" type="submit">ค้นหา</button>
             </form>
 <!--- replace old search box -->
           </div>
@@ -330,7 +330,7 @@ if($filmData['FilmRating'] == 5 ){
 										echo '</div>';
 ?> 
 			
-			<center><button class='btn btn-primary shadow float-start' style='margin-top: 10px; font-family: Kanit, sans-serif;width: 140px;' onclick='gotoBook()'>ซื้อตั๋วหนัง (Ticket)</button></center>
+			<center><button class='btn btn-primary shadow float-start' style='margin-top: 10px; font-family: Kanit, sans-serif;width: 140px;' onclick='gotoBook()'>ซื้อตั๋วภาพยนตร์</button></center>
                                   <br></div>
                               </div>
 							 
@@ -348,7 +348,7 @@ if($filmData['FilmRating'] == 5 ){
               <div class="card">
                   <div class="card-body p-4" style="font-family: Kanit, sans-serif;box-shadow: inset 0px 0px #070707;">
                       <p class="text-primary card-text mb-0" id="ReviewUserName1" style="box-shadow: inset 0px 0px #070707;"><?=$Review['FirstName']?> <?=$Review['LastName']?></p>
-                      <p class="fw-bold float-start mb-0" style="width: 50px;color: rgb(31,31,31);box-shadow: inset 0px 0px #070707;">Rating</p>
+                      <p class="fw-bold float-start mb-0" style="width: 50px;color: rgb(31,31,31);box-shadow: inset 0px 0px #070707;">เรตติ้ง</p>
                       <p class="text-muted float-start card-text mb-0" style="box-shadow: inset 0px 0px #070707;">&nbsp; <?=$Review['rating']?></p><textarea id="ReviewTextDis1" readonly="" style="min-width: 100%;height: 154px;font-family: Kanit, sans-serif;box-shadow: inset 0px 0px #070707;" placeholder="<?=$Review['comment']?>"></textarea>
                       <div class="d-flex" style="box-shadow: inset 0px 0px #070707;">
                           <div style="box-shadow: inset 0px 0px #070707;"></div>

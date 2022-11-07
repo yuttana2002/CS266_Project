@@ -23,7 +23,7 @@
 
 <head>
 
-    <title>ตั๋วหนังที่มีอยู่</title>
+    <title>ตั๋วภาพยนตร์ที่มีอยู่</title>
      <!-- Required meta tags -->
      <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,7 +64,7 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  ตั๋วหนัง
+                  ตั๋วภาพยนตร์
                 </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <li><a class="dropdown-item" href="SearchMovie.php">จองตั๋ว</a></li>
@@ -78,7 +78,7 @@
                   <li><a class="dropdown-item" href="Profile.php">ข้อมูลผู้ใช้</a></li>
                   <li><a class="dropdown-item" href="Edit.php">แก้ไขข้อมูลส่วนตัว</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="Ticket.php?logout='1'">Logout</a></li>
+                  <li><a class="dropdown-item" href="Ticket.php?logout='1'">ออกจากระบบ</a></li>
                 </ul>
               </li>
             </ul>
@@ -86,7 +86,7 @@
             <form class="d-flex" action="search.php" method="POST">
               <input class="form-control me-2" id="searchBox" name="searchBox" style='width: 476px;' autocomplete="off" type="search" placeholder="ค้นหาภาพยตร์" aria-label="Search" required>
 			  
-              <button class="btn btn-outline-light" type="submit">Search</button>
+              <button class="btn btn-outline-light" type="submit">คันหา</button>
             </form>
 <!--- replace old search box -->
           </div>
@@ -103,7 +103,7 @@
     <div class="container py-4 py-xl-5" style="background: transparent;text-align: center;">
         <div class="row mb-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <h2 style="font-family: Kanit, sans-serif; font-size: 50px;"><strong>TICKET</strong></h2>
+                <h2 style="font-family: Kanit, sans-serif; font-size: 50px;"><strong>ตั๋วภาพยนตร์</strong></h2>
             </div>
         </div>
 
@@ -169,7 +169,7 @@
                                         <button class="btn btn-primary shadow float-start" style="margin-right: 10px;font-family: Kanit, sans-serif;width: 110px;"><?php echo ($genre['FilmGenre'])?></button>                                        
                                         <?php endwhile?><br>
                                         <p class="lead fs-6"><br><br></p>
-                                        <p class="fw-bold float-start mb-0" id="RatingLabel" style="width: 97px;color: rgb(20,0,255);font-family: Kanit, sans-serif;margin-top: -26px;">Movie Rating</p>
+                                        <p class="fw-bold float-start mb-0" id="RatingLabel" style="width: 97px;color: rgb(20,0,255);font-family: Kanit, sans-serif;margin-top: -26px;">เรตติ้งภาพยนตร์</p>
                                         <p class="text-muted float-start mb-0" id="RatingScore" style="margin-top: -26px;margin-left: 93px;">&nbsp; <?php echo($curfilm['FilmRating']." (".$countreview['count']." reviews)")?> </p><br><br>
                                         <button class="btn btn-primary shadow float-start" id="FilmTime" style="margin-right: 10px;font-family: Kanit, sans-serif;width: 150px;">
                                         <?php 
@@ -188,15 +188,15 @@
                                         echo($start."-".$endfilm);
                                         ?></button>
                                         <p class="lead fs-6"><br><br><br></p>
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -210px;">Number of Ticket :</small>
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -210px;">จำนวนตั๋วภาพยนตร์ :</small>
                                         <small id="FilmOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($amount['count']);?><br></small>
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -132px;">Number of Pop Corn</small>
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -132px;">จำนวนป๊อปคอร์น</small>
                                         <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;">(200 oz) :</small>
                                         <small id="FoodOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($food['Food']);?><br></small>
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -181px;">Number of Drink</small>
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: -181px;">จำนวนเครื่องดื่ม</small>
                                         <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;">(32 oz):</small>
                                         <small id="DrinkOwnNum" style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-right: 10px;margin-left: 10px;"><?php echo($food['Drink']);?><br></small>
-                                        <button class="btn btn-outline-primary float-start" data-bss-hover-animate="pulse" id="ReviewButton" type="button" style="margin-left: 0px;font-family: Kanit, sans-serif;margin-top:40px;" onclick="window.location.href='MoviesReview.php?movies=<?php echo($curfilm['FilmName'])?>&moviesID=<?php echo($ticket['FilmID']);?>';">Review Page</button>
+                                        <button class="btn btn-outline-primary float-start" data-bss-hover-animate="pulse" id="ReviewButton" type="button" style="margin-left: 0px;font-family: Kanit, sans-serif;margin-top:40px;" onclick="window.location.href='MoviesReview.php?movies=<?php echo($curfilm['FilmName'])?>&moviesID=<?php echo($ticket['FilmID']);?>';">รีวิวภาพยนตร๋</button>
                                    
                                 </div>
                             </div>

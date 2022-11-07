@@ -49,7 +49,7 @@ $query = mysqli_query($conn, $sql);
     <!-- CSS -->
     <link href='https://fonts.googleapis.com/css?family=Kanit&subset=thai,latin' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
-    <title>Add Movie</title>
+    <title>เพิ่มภาพยนตร์</title>
 
 
 
@@ -108,7 +108,7 @@ $query = mysqli_query($conn, $sql);
           <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
               <li class="nav-item">
-                <a class="nav-link" href="Home.php?logout='1'">Logout</a>
+                <a class="nav-link" href="Home.php?logout='1'">ออกจากระบบ</a>
               </li>
             </ul>
          
@@ -150,9 +150,9 @@ $query = mysqli_query($conn, $sql);
 <div class="row">
   <div class="col">
 
-    <label for="FilmName">Movies</label>
+    <label for="FilmName">ภาพยนตร์</label>
     <select name="FilmName" id="FilmName" class="form-select" onchange="show_showtime1()">
-    <option value="">Movies Select</option>
+    <option value="">เลือกภาพยนตร์</option>
     <?php while($result = mysqli_fetch_assoc($query)): ?>
     <option value="<?=$result['FilmID']?>"><?=$result['FilmName']?></option>
     <?php endwhile; ?>
@@ -161,9 +161,9 @@ $query = mysqli_query($conn, $sql);
   </div>
 
   <div class="col">
-    <label for="TheatreName">Theatres</label>
+    <label for="TheatreName">โรงภาพยนตร์</label>
     <select name="TheatreName" id="TheatreName" class="form-select" onchange="show_showtime1()">
-    <option value="">Theatre Select</option>
+    <option value="">เลือกโรงภาพยนตร์</option>
     <?php while($result = mysqli_fetch_assoc($query1)): ?>
     <option value="<?=$result['TheatreID']?>"><?=$result['TheatreName']?></option>
     <?php endwhile; ?>
@@ -181,7 +181,7 @@ $query = mysqli_query($conn, $sql);
 
                     <div class="card-body" >
 
-                    <div id="txtHint"><small class="text-muted">โปรดเลือด movies และ theatres ก่อน</small></div>
+                    <div id="txtHint"><small class="text-muted">โปรดเลือด ภาพยนตร์ และ โรงภาพยนตร์ ก่อน</small></div>
                     </div>
 
         </div>
@@ -190,20 +190,20 @@ $query = mysqli_query($conn, $sql);
 
 
 
-<br><div class="d-grid gap-2 d-md-flex justify-content-md-end"><button type="button" class="btn btn-outline-primary" onclick="show_addshow()">Add Show Time</button></div>
+<br><div class="d-grid gap-2 d-md-flex justify-content-md-end"><button type="button" class="btn btn-outline-primary" onclick="show_addshow()">เพิ่มเวลาฉาย</button></div>
 
 <div class="row" id="form_addshow">
       <div class="col">
-        <label class="form-label">ShowTime</label>
+        <label class="form-label">ช่วงเวลาฉาย</label>
         <input class="form-control" type="datetime-local" name="ShowTime" required="" >
       </div>
       <div class="col">
-        <label class="form-label" >Price</label>
+        <label class="form-label" >ราคา</label>
         <input class="form-control" type="number" name="Price" placeholder="ราคา" required="">
       </div>
 
    
-      <div class="form-group text-center"> <br><input type="submit" class="btn btn-secondary btn-sm" name="add_show" type="submit" data-toggle="submit" value='ยืนยัน (Confirm)'></div>
+      <div class="form-group text-center"> <br><input type="submit" class="btn btn-secondary btn-sm" name="add_show" type="submit" data-toggle="submit" value='ยืนยัน'></div>
       </div>
 </form>
 
@@ -221,21 +221,21 @@ $query = mysqli_query($conn, $sql);
   </div>
 </div>
 
-<br><div class="d-grid gap-2 d-md-flex justify-content-md-end"><button type="button" class="btn btn-outline-primary" onclick="show_addmovie()">Add Movies</button></div>
+<br><div class="d-grid gap-2 d-md-flex justify-content-md-end"><button type="button" class="btn btn-outline-primary" onclick="show_addmovie()">เพิ่มภาพยนตร์</button></div>
 <form  class="text-dark bounce animated" action="addmovie_db.php" method="post" id="form_addmovie">
   <div class="row g-2" id="form_addshow">
         <div class="col-md-6">
-            <div class="form-group"><label>Name</label><input class="form-control" type="text" name="FilmName" placeholder="ชื่อภาพยนตร์" required="" ></div>
+            <div class="form-group"><label>ชื่อเรื่อง</label><input class="form-control" type="text" name="FilmName" placeholder="ชื่อภาพยนตร์" required="" ></div>
         </div>
         <div class="col-md-6"> 
-            <div class="form-group"><label>Time</label><input class="form-control" type="time" name="FilmDuration"  required="" ></div>
+            <div class="form-group"><label>ระยะเวลาภาพยนตร์</label><input class="form-control" type="time" name="FilmDuration"  required="" ></div>
         </div>
-            <div class="form-group"><label>Description</label><textarea class="form-control" type="text" name="FilmDescription" placeholder="รายละเอียดของภาพยนตร์" required="" ></textarea></div>
-            <div class="form-group"><label>Genre</label>
+            <div class="form-group"><label>คำอธิบาย</label><textarea class="form-control" type="text" name="FilmDescription" placeholder="รายละเอียดของภาพยนตร์" required="" ></textarea></div>
+            <div class="form-group"><label>ประเภทภาพยนตร์</label>
         <div class="row g-2">
            <div class="col-md-4">
            <select name='genre1' id='genre1' class="form-select" aria-label="Default select example">
-              <option value="" selected>เลือกประเภทหนัง</option>
+              <option value="" selected>เลือกประเภทภาพยนตร์</option>
               <option value="Action">Action</option>
               <option value="Comedy">Comedy</option>
               <option value="Fantasy">Fantasy</option>
@@ -247,7 +247,7 @@ $query = mysqli_query($conn, $sql);
            </div>
            <div class="col-md-4">
            <select name='genre2' id='genre2' class="form-select" aria-label="Default select example">
-           <option value="" selected>เลือกประเภทหนัง</option>
+           <option value="" selected>เลือกประเภทภาพยนตร์</option>
               <option value="Action">Action</option>
               <option value="Comedy">Comedy</option>
               <option value="Fantasy">Fantasy</option>
@@ -259,7 +259,7 @@ $query = mysqli_query($conn, $sql);
             </div>
            <div class="col-md-4">
            <select name='genre3' id='genre3' class="form-select" aria-label="Default select example">
-              <option value="" selected>เลือกประเภทหนัง</option>
+              <option value="" selected>เลือกประเภทภาพยนตร์</option>
               <option value="Action">Action</option>
               <option value="Comedy">Comedy</option>
               <option value="Fantasy">Fantasy</option>
@@ -272,7 +272,7 @@ $query = mysqli_query($conn, $sql);
         </div>
         </div>
     </div> <br>
-            <div class="form-group text-center"><input type="submit" class="btn btn-secondary btn-sm" name="addmov" type="submit" data-toggle="submit" value='ยืนยัน (Confirm)'></div>
+            <div class="form-group text-center"><input type="submit" class="btn btn-secondary btn-sm" name="addmov" type="submit" data-toggle="submit" value='ยืนยัน'></div>
         </form>
 
     </div>
