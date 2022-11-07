@@ -123,7 +123,7 @@ $query2 = mysqli_query($conn, $sql2);
                   <li><a class="dropdown-item" href="Profile.php">ข้อมูลผู้ใช้</a></li>
                   <li><a class="dropdown-item" href="Edit.php">แก้ไขข้อมูลส่วนตัว</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="Home.php?logout='1'">Logout</a></li>
+                  <li><a class="dropdown-item" href="Home.php?logout='1'">ออกจากระบบ</a></li>
                 </ul>
               </li>
             </ul>
@@ -131,7 +131,7 @@ $query2 = mysqli_query($conn, $sql2);
             <form class="d-flex" action="search.php" method="POST">
               <input class="form-control me-2" id="searchBox" name="searchBox" style='width: 476px;' autocomplete="off" type="search" placeholder="ค้นหาภาพยตร์" aria-label="Search" required>
 			  
-              <button class="btn btn-outline-light" type="submit">Search</button>
+              <button class="btn btn-outline-light" type="submit">ค้นหา</button>
             </form>
 			
           </div>
@@ -166,17 +166,17 @@ $query2 = mysqli_query($conn, $sql2);
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span class="visually-hidden">ก่อนหน้า</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span class="visually-hidden">ถัดไป</span>
         </button>
       </div>
 
       <div id = "myPadding" >
           
-          <center><p class="fs-1">RECOMMEND MOVIES</p></center>
+          <center><p class="fs-1">ภาพยนตร์แนะนำ</p></center>
 
 
           <div class="container" style="margin-top: 15px;">
@@ -187,7 +187,7 @@ $query2 = mysqli_query($conn, $sql2);
                       
                       
 <select name="FilmGenre" id="FilmGenre" class="form-control" style="width: 185px;height: 45px;margin-top: 10px;margin-bottom: 10px;margin-right: 0px;margin-left: 10px;color: #495057;font-family: Kanit, sans-serif;" onchange="showGenre()">
-<option value="movies">เลือกประเภทหนัง</option>
+<option value="movies">เลือกประเภทภาพยนตร์</option>
 <?php while($result = mysqli_fetch_assoc($query1)): ?>
 <option value="<?=$result['FilmGenre']?>"><?=$result['FilmGenre']?></option>
 <?php endwhile; ?> 

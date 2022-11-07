@@ -12,7 +12,7 @@
     <!-- CSS -->
     <link href='https://fonts.googleapis.com/css?family=Kanit&subset=thai,latin' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
-    <title>Add Movie</title>
+    <title>เพิ่มภาพยนตร์</title>
 
 <style>
 

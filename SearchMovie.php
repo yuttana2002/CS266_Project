@@ -72,7 +72,7 @@ include('server.php');
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  ตั๋วหนัง
+                  ตั๋วภาพยนตร์
                 </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                 <li><a class="dropdown-item" href="SearchMovie.php">จองตั๋ว</a></li>
@@ -86,7 +86,7 @@ include('server.php');
                   <li><a class="dropdown-item" href="Profile.php">ข้อมูลผู้ใช้</a></li>
                   <li><a class="dropdown-item" href="Edit.php">แก้ไขข้อมูลส่วนตัว</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="SearchMovie.php?logout='1'">Logout</a></li>
+                  <li><a class="dropdown-item" href="SearchMovie.php?logout='1'">ออกจากระบบ</a></li>
                 </ul>
               </li>
             </ul>
@@ -95,7 +95,7 @@ include('server.php');
             <form class="d-flex" action="search.php" method="POST">
               <input class="form-control me-2" id="searchBox" name="searchBox" style='width: 481px;' autocomplete="off" type="search" placeholder="ค้นหาภาพยตร์" aria-label="Search" required>
 			  
-              <button class="btn btn-outline-light" type="submit">Search</button>
+              <button class="btn btn-outline-light" type="submit">คันหา</button>
             </form>
 <!--- replace old search box -->
 			
@@ -149,7 +149,7 @@ include('server.php');
         <!--Theater-->
         
             <select name="TheatreName" id="TheatreName" class="form-select" onchange="show_showtime2()">
-            <option value="">Theatre Select</option>
+            <option value="">เลือกภาพยนตร์</option>
             <?php while($result = mysqli_fetch_assoc($query1)): ?>
             <option value="<?=$result['TheatreID']?>"><?=$result['TheatreName']?></option>
             <?php endwhile; ?>
@@ -160,7 +160,7 @@ include('server.php');
         <!--Flim-->
         
             <select name="FilmName" id="FilmName" class="form-select" onchange="show_showtime2()">
-            <option value="">Movies Select</option>
+            <option value="">เลือกโรงภาพยนตร์</option>
             <?php while($result = mysqli_fetch_assoc($query)): ?>
             <option value="<?=$result['FilmID']?>"><?=$result['FilmName']?></option>
             <?php endwhile; ?>
@@ -179,7 +179,7 @@ include('server.php');
 
                     <div class="card-body" >
 
-                    <div id="txtHint"><small class="text-muted">โปรดเลือก movies และ theatres ก่อน</small></div>
+                    <div id="txtHint"><small class="text-muted">กรุณาเลือก ภาพยนตร์ และ โรงภาพยนตร์ ก่อน</small></div>
                     </div>
 
         </div>

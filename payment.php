@@ -23,7 +23,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport">
-    <title>Payment</title>
+    <title>การชำระเงิน</title>
     <link rel="stylesheet" href="bootstrap/css/payment_bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit&amp;display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -64,7 +64,7 @@
     <div class="container py-4 py-xl-5" style="background: transparent;text-align: center;">
         <div class="row mb-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <h2 style="font-family: Kanit, sans-serif; font-size: 50px;"><strong>PAYMENT</strong></h2>
+                <h2 style="font-family: Kanit, sans-serif; font-size: 50px;"><strong>การชำระเงิน</strong></h2>
             </div>
         </div>
 
@@ -74,7 +74,7 @@
                             <div class="container py-4 py-xl-5" style="background: transparent;text-align: center;">
                             <div class="text-center">
                             <form method="POST" action="Home.php">
-                                        <button class="btn btn-primary shadow " style="margin-left: 10px;font-family: Kanit, sans-serif;width: 140px;" ;>ต่อไป(Next)</button>
+                                        <button class="btn btn-primary shadow " style="margin-left: 10px;font-family: Kanit, sans-serif;width: 140px;" ;>ต่อไป</button>
                                         </form></div>
 </div></div>
                             

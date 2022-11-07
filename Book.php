@@ -135,14 +135,14 @@
                   <li><a class="dropdown-item" href="Profile.php">ข้อมูลผู้ใช้</a></li>
                   <li><a class="dropdown-item" href="Edit.php">แก้ไขข้อมูลส่วนตัว</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="Book.php?logout='1'">Logout</a></li>
+                  <li><a class="dropdown-item" href="Book.php?logout='1'">ออกจากระบบ</a></li>
                 </ul>
               </li>
             </ul>
             <!--- replace old search box -->
             <form class="d-flex" action="search.php" method="POST">
               <input class="form-control me-2" id="searchBox" name="searchBox" style='width: 476px;' autocomplete="off" type="search" placeholder="ค้นหาภาพยตร์" aria-label="Search" required>
-              <button class="btn btn-outline-light" type="submit">Search</button>
+              <button class="btn btn-outline-light" type="submit">ค้นหา</button>
             </form>
 <!--- replace old search box -->
           </div>
@@ -183,24 +183,24 @@
             
                                    ?> <br>
                                    <h5 id="showprice" ></h5>
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Number of Ticket </small>
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">จำนวนตั๋วภาพยนตร์ </small>
                                         <br>    
                                         <input class="form-control" type="number" id="NumOfFlim" name = "NumOfFlim" value="1" min="1" max="<?php echo  $RemainingSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
                                        
                                         
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Pop Corn 120 Baht Each</small>
-                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(200 gram)</small>
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">ป๊อปคอร์น 120 บาท ต่อถัง </small>
+                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(200 กรัม)</small>
                                         <input class="form-control" type="number" id="NumOfPop" name = "NumOfPop" value="0" min="0" max="5" onchange="recal()" style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">Drink 89 Baht Each</small>
-                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(32 oz)</small>
+                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">เครื่องดื่ม 89 บาท ต่อแก้ว </small>
+                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(32 ออนซ์) </small>
                                         <br>
                                         <input class="form-control" type="number" id="NumOfDrink" name = "NumOfDrink" value="0" min="0" max="5" onchange="recal()" style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
                                         <p class="lead fs-4">
-                                        <small style="color: red; font-size: 10px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*pick a flavor of Pop Corn and Drink at the counter </small>
+                                        <small style="color: red; font-size: 10px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*เลือกรสชาติของป๊อปคอร์นและเครื่องดื่มที่เคาน์เตอร์ </small>
                                         <br> 
-                                        <small style="color: red; font-size: 10px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*member discount is not included on Pop Corn and Drink</small>
+                                        <small style="color: red; font-size: 10px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*ส่วนลดของสมาชิกไม่รวมอยู่ในค่าป๊อปคอร์นและเครื่องดื่ม </small>
                                         <br><br> 
-                                        <button class="btn btn-primary shadow " style="margin-left: 10px;font-family: Kanit, sans-serif;width: 140px;" ;>ยืนยัน (Confirm)</button>
+                                        <button class="btn btn-primary shadow " style="margin-left: 10px;font-family: Kanit, sans-serif;width: 140px;" ;>ยืนยัน</button>
                               
                                       
                                     </div>
