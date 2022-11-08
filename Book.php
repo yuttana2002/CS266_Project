@@ -89,7 +89,7 @@
 
 
       function showprice(){
-      document.getElementById('showprice').innerHTML='Price: ' + price ;
+      document.getElementById('showprice').innerHTML='Price: ' + price + ' บาท';
 
       }
 
@@ -183,22 +183,22 @@
             
                                    ?> <br>
                                    <h5 id="showprice" ></h5>
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">จำนวนตั๋วภาพยนตร์ </small>
+                                        <small style="color: rgb(30,31,31); font-size: 27px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">จำนวนตั๋วภาพยนตร์ </small>
                                         <br>    
                                         <input class="form-control" type="number" id="NumOfFlim" name = "NumOfFlim" value="1" min="1" max="<?php echo  $RemainingSeat  ?>" onchange="recal()"  style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
                                        
                                         
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">ป๊อปคอร์น 120 บาท ต่อถัง </small>
-                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(200 กรัม)</small>
+                                        <small style="color: rgb(30,31,31); font-size: 27px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 70px;">ป๊อปคอร์น 120 บาท ต่อถัง </small>
+                                        <small style="color: rgb(30,31,31); font-size: 14px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(200 กรัม)</small>
                                         <input class="form-control" type="number" id="NumOfPop" name = "NumOfPop" value="0" min="0" max="5" onchange="recal()" style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
-                                        <small style="color: rgb(30,31,31); font-size: 22px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">เครื่องดื่ม 89 บาท ต่อแก้ว </small>
-                                        <small style="color: rgb(30,31,31); font-size: 12px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(32 ออนซ์) </small>
+                                        <small style="color: rgb(30,31,31); font-size: 27px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 70px;">เครื่องดื่ม 89 บาท ต่อแก้ว </small>
+                                        <small style="color: rgb(30,31,31); font-size: 14px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 10px;">(32 ออนซ์) </small>
                                         <br>
                                         <input class="form-control" type="number" id="NumOfDrink" name = "NumOfDrink" value="0" min="0" max="5" onchange="recal()" style="height: 42px;width: 198px;margin: 0px;margin-bottom: 0px;margin-left: 120px;" >
                                         <p class="lead fs-4">
-                                        <small style="color: red; font-size: 10px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*เลือกรสชาติของป๊อปคอร์นและเครื่องดื่มที่เคาน์เตอร์ </small>
+                                        <small style="color: red; font-size: 17px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*เลือกรสชาติของป๊อปคอร์นและเครื่องดื่มที่เคาน์เตอร์ </small>
                                         <br> 
-                                        <small style="color: red; font-size: 10px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*ส่วนลดของสมาชิกไม่รวมอยู่ในค่าป๊อปคอร์นและเครื่องดื่ม </small>
+                                        <small style="color: red; font-size: 17px;font-family: Kanit, sans-serif;margin-left: 0px;margin-left: 30px;">*ส่วนลดของสมาชิกไม่รวมอยู่ในค่าป๊อปคอร์นและเครื่องดื่ม </small>
                                         <br><br> 
                                         <button class="btn btn-primary shadow " style="margin-left: 10px;font-family: Kanit, sans-serif;width: 140px;" ;>ยืนยัน</button>
                               
@@ -234,12 +234,12 @@
 	      
 	 if(cnt<=1 ){
           document.getElementById('NumOfFlim').value = 1;
- 	  document.getElementById('showprice').innerHTML='Price: ' + mai;
+ 	  document.getElementById('showprice').innerHTML='Price: ' + mai+ ' บาท';
         
         }else{
          cnt = Number(cnt)-1;
  	document.getElementById('NumOfFlim').value = Number(cnt);
-          document.getElementById('showprice').innerHTML='Price: ' + mai;     
+          document.getElementById('showprice').innerHTML='Price: ' + mai+ ' บาท';     
         }
         
     }
@@ -256,23 +256,23 @@ let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*N
           
           if(cnt >= 20){
              document.getElementById('NumOfFlim').value = 20;
-             document.getElementById('showprice').innerHTML='Price: ' + mai;
+             document.getElementById('showprice').innerHTML='Price: ' + mai+ ' บาท';
           }
           else{
              document.getElementById('NumOfFlim').value = <?php echo  $RemainingSeat  ?>;
-             document.getElementById('showprice').innerHTML='Price: ' + price*<?php echo  $RemainingSeat  ?> ;
+             document.getElementById('showprice').innerHTML='Price: ' + price*<?php echo  $RemainingSeat  ?>+ ' บาท' ;
           } 
 	} 
  
       else{
  	if(cnt >= 20){
              document.getElementById('NumOfFlim').value = 20;
-             document.getElementById('showprice').innerHTML='Price: ' + mai  ;
+             document.getElementById('showprice').innerHTML='Price: ' + mai+ ' บาท'  ;
 
           }
  		else{cnt = Number(cnt)+1;
           	document.getElementById('NumOfFlim').value = Number(cnt);
-         	 document.getElementById('showprice').innerHTML='Price: ' + mai ;}
+         	 document.getElementById('showprice').innerHTML='Price: ' + mai + ' บาท' ;}
 	
         }
       
@@ -287,9 +287,9 @@ let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*N
 	      let mai = Number(price)*Number(film) + Number(pop)*Number(120) + Number(drink)*Number(89);
   	if(cnt1 >= 20){
              document.getElementById('NumOfFlim').value = 20;
-            document.getElementById('showprice').innerHTML='Price: ' + mai ;
+            document.getElementById('showprice').innerHTML='Price: ' + mai + ' บาท' ;
           }
-	else{ document.getElementById('showprice').innerHTML='Price: ' + mai;}
+	else{ document.getElementById('showprice').innerHTML='Price: ' + mai + ' บาท';}
        
       }
 
